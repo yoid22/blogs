@@ -1,13 +1,13 @@
 <?php
 
 require "functions.php";
+require "Database.php";
 
-$dsn = "mysql:host=localhost;port=3306;user=root;password=;dbname=skibbidy;charset=utf8mb4";
 
-$pdo = new PDO($dsn);
-$statement = $pdo->prepare("SELECT * FROM posts");
-$statement->execute();
-$posts=$statement->fetchALL(PDO::FETCH_ASSOC);
+$db = new Database();
+$posts = $db->query(); 
+
+
 
 echo "<ul>";
 foreach($posts as $🤣){

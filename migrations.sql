@@ -1,4 +1,7 @@
-/*CREATE DATABASE skibbidy;
+
+DROP DATABASE IF EXISTS skibbidy;
+
+CREATE DATABASE skibbidy;
 
 
 
@@ -13,5 +16,6 @@ INSERT INTO posts
 (content)
 VALUES 
 ("bababoye soon k jk m s aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"),
-("skibbidy toilets are coming")
-*/
+("skibbidy toilets are coming"),
+("DIDDY party");
+
