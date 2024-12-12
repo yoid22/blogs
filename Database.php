@@ -2,15 +2,23 @@
 
 
 class Database{
-public function query(){
 
-                $dsn = "mysql:host=localhost;port=3306;user=root;password=;dbname=skibbidy;charset=utf8mb4";
+        public $pdo;
 
-                 $pdo = new PDO($dsn);
-                $statement = $pdo->prepare("SELECT * FROM posts");
+    public function __construct($config){
+                $dsn = "mysql:" . http_build_query($config,"",";");
+
+                $this->pdo = new PDO($dsn);
+                $this->pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
+}
+    public function query(){
+
+               
+                $statement = $this->pdo->prepare("SELECT * FROM posts");
                 $statement->execute();
-                $data=$statement->fetchALL(PDO::FETCH_ASSOC);
-                return $data;
+                return $statement;
+                
 }
 
 
