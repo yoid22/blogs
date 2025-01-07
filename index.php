@@ -2,31 +2,32 @@
 
 require "functions.php";
 require "Database.php";
-$config = require ("config.php");
+$config = require "config.php";
 
 $db = new Database($config["database"]);
 
-if(isset($_GET["search_query"])&& $_GET["search_query"]!=""){
-    $posts =$db->query("SELECT * FROM posts WHERE content LIKE `%". $_GET["search_query"]  ."%`")-> fetchALL();;
+$select = "SELECT * FROM posts";
+$params = [];
+if (isset($_GET['search']) && $_GET['search']!=""){
+    $search_query="%" . $_GET['search'] . "%";
+    $select .= " WHERE content LIKE :nosaukums";
+    $params= ["nosaukums"=>$search_query];
 }
 
-echo "<h1>Blogs</h1>";
-echo "<form>";
-echo "<input name=`search_query` />";
-echo "<button>Meklet</button>";
+$posts = $db->query($select, $params)->fetchAll();
 
+ echo "<h1>BLOGS</h1>";
+echo "<form>";
+echo "<input name='search' />";
+echo "<button>Meklēt</button>";
 echo "</form>";
 
-$posts=$db->query("SELECT * FROM posts")-> fetchALL();
+if (count($posts) == 0){
+    echo "NOT FOUND 🤢😱😰😨🤯😤😡🤬😠🤮💀💀💀💀💀💀💀🐵";
+}
 
 echo "<ul>";
-foreach($posts as $🤣){
-    
-    echo "<li>" . $🤣 ["content"]."</li>" . "<br>";
-    
-    
+foreach($posts as $post){
+    echo "<li>". $post["content"]. "</li>";
 }
 echo "</ul>";
-
- 
-
