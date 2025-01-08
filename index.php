@@ -16,18 +16,6 @@ if (isset($_GET['search']) && $_GET['search']!=""){
 
 $posts = $db->query($select, $params)->fetchAll();
 
- echo "<h1>BLOGS</h1>";
-echo "<form>";
-echo "<input name='search' />";
-echo "<button>Meklēt</button>";
-echo "</form>";
 
-if (count($posts) == 0){
-    echo "NOT FOUND 🤢😱😰😨🤯😤😡🤬😠🤮💀💀💀💀💀💀💀🐵";
-}
 
-echo "<ul>";
-foreach($posts as $post){
-    echo "<li>". $post["content"]. "</li>";
-}
-echo "</ul>";
+require "views/index.view.php";
