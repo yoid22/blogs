@@ -16,6 +16,7 @@ if (isset($_GET['search']) && $_GET['search']!=""){
 
 $sigma = $db->query($select, $params)->fetchAll();
 
-
+$pagetitle = "Categories";
+$style = "css/style1.css";
 require "views/categories.view.php";
 

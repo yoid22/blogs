@@ -1,0 +1,117 @@
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Background and font color */
+body {
+    background-color: #1e2a1f; /* Dark green background */
+    font-family: 'Arial', sans-serif;
+    color: #aaff00; /* Luminous green text */
+    line-height: 1.6;
+    overflow: hidden;
+    height: 100vh;
+    position: relative;
+}
+
+h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin: 2rem;
+    animation: glowingText 1.5s ease-in-out infinite alternate, shake 0.5s infinite alternate;
+}
+
+p {
+    font-size: 1.2rem;
+    margin: 1rem;
+    text-align: justify;
+    animation: flashText 0.5s ease-in-out infinite alternate;
+}
+
+em {
+    color: #ffcc00;
+}
+
+strong {
+    color: #ff6600;
+}
+
+/* Flashing effect for text */
+@keyframes flashText {
+    0% {
+        color: #aaff00;
+    }
+    50% {
+        color: #ff6600;
+    }
+    100% {
+        color: #aaff00;
+    }
+}
+
+/* Glowing text effect */
+@keyframes glowingText {
+    0% {
+        text-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00, 0 0 15px #ffcc00, 0 0 20px #ff6600, 0 0 30px #ff6600, 0 0 40px #ff6600;
+    }
+    100% {
+        text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 30px #ffcc00, 0 0 40px #ff6600, 0 0 50px #ff6600, 0 0 60px #ff6600;
+    }
+}
+
+/* Shaking effect for header */
+@keyframes shake {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-10deg);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+    75% {
+        transform: rotate(-10deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+/* Background animation to shift green shades */
+@keyframes bgAnimation {
+    0% {
+        background-color: #1e2a1f;
+    }
+    25% {
+        background-color: #2a3a2b;
+    }
+    50% {
+        background-color: #213321;
+    }
+    75% {
+        background-color: #243524;
+    }
+    100% {
+        background-color: #1e2a1f;
+    }
+}
+
+/* Applying background animation */
+body {
+    animation: bgAnimation 10s ease-in-out infinite;
+}
+
+/* Moving text for DVD-like effect */
+.move-text {
+    position: absolute;
+    font-size: 2rem;
+    color: #ff6600;
+    white-space: nowrap;
+    font-weight: bold;
+    pointer-events: none; /* Prevents user from interacting with the text */
+}
+
