@@ -16,4 +16,4 @@ $posts = $db->query($select, $params)->fetchAll();
 
 $pagetitle = "Blogs";
 
-require "views/index.view.php";
+require "views/posts/index.view.php";
