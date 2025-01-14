@@ -12,15 +12,13 @@
 
 
 
+    $routs = require ("routs.php");
 
+if (array_key_exists($uri,$routs)){
+    require $routs[$uri];
 
-if ($uri="/"){
-    require "controllers/index.php";
-}elseif($uri="About"){
-    require "controllers/story.php";
-}elseif($uri="Categories"){
-    require "controllers/categories.php";
-}elseif( $uri = http_response_code(404)){
+}else{
+    http_response_code(404);
     echo "<p>Atvainojiet, lapa netika atrasta!</p>";
     die();
 }

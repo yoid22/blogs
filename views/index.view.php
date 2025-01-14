@@ -1,5 +1,6 @@
-<?php require "components/navbar.php"; ?>
 <?php require "components/header.php"; ?>
+<?php require "components/navbar.php"; ?>
+
 
 <body>
 <h1>BLOGS</h1>
@@ -22,7 +23,7 @@ foreach($posts as $post){
     <li> <?= $post["content"]   ?>  </li>
 <?php  }   ?>
 </ul>
-<?php require "components/header.php"; ?>
+<?php require "components/footer.php"; ?>
  
  
  
