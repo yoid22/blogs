@@ -1,7 +1,7 @@
 <?php require "views/components/navbar.php"; ?>
 <?php require "views/components/header.php"; ?>
 <body>
-<h1> <?= $post["content"] ?></h1>
+<h1> <?= htmlspecialchars($post["content"]) ?></h1>
 
 
 
